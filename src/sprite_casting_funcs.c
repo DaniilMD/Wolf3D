@@ -103,8 +103,8 @@ void			get_sprite_size_and_pos(t_param *param, int i)
 
 	spr_par = &(param->spr_par);
 	set_sprite_size_and_coef(param, i);
-	spr_par->sprite_height = fabs((int)(WINDOW_HEIGHT / (spr_par->transformed_y))
-		* spr_par->height_coef);
+	spr_par->sprite_height = fabs((int)(WINDOW_HEIGHT /
+	(spr_par->transformed_y)) * spr_par->height_coef);
 	spr_par->draw_start_y = WINDOW_HEIGHT / 2 - spr_par->sprite_height / 2
 		+ spr_par->move_spr_y;
 	if (spr_par->draw_start_y < 0)
