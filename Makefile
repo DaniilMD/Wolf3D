@@ -1,55 +1,60 @@
 NAME = wolf3d
 
-SRC = main.c get_map.c init_and_usage.c events.c
+SRC = main.c init_and_usage.c events.c define_map.c\
+	wall_casting_funcs.c wall_casting_core.c floor_and_ceiling_casting.c\
+	sprite_casting_funcs.c sprite_casting_core.c fog.c free.c movement.c\
+	door_funcs_check_hit.c door_funcs_event.c minimap.c rotation.c norm.c\
+	norm2.c norm3.c norm4.c\
+	
+SRC_DIR = src/
+OBJ_DIR = obj/
+INC_DIR = include/
+LIB_DIR = libft/
+
+HEADER =  wolf3d.h
+MAC_KEYS = keys.h
+LINUX_KEYS = linux_keys.h
+
+ALL_HEADERS = $(HEADER) $(LINUX_KEYS) $(MAC_KEYS)
 
 OBJ = $(SRC:.c=.o)
 
-HEADER = wolf3d.h
+LIBFT = -L ./libft -lft
 
 FLAGS = -Wall -Wextra -Werror
 
-MLX_FLAGS = -L ./mlx/ -lmlx -framework OpenGL -framework AppKit
+MLX_FLAGS = -L ./minilibx-master -lmlx -lXext -lX11
 
+LINUX_EXTRA_FLAGS = -lm -pthread
 
-GLFW = -L glfwPre/lib-macos -lglfw
-
-GLEW = -L glew/lib -lGLEW -framework OpenGL
-
-
-
-
-GLFW_LOC := $(shell brew --prefix glfw)
-##GLFW_INC := $(GLFW_LOC)/include/
-GLFW_LINK := -L $(GLFW_LOC)/lib/ -lglfw
-
-GLEW_LOC := $(shell brew --prefix glew)
-##GLEW_INC := $(GLEW_LOC)/include/
-GLEW_LINK := -L $(GLEW_LOC)/lib/ -lGLEW 
-
-
-
-
-MLX_FLAGS = -L ./mlx/ -lmlx -framework OpenGL -framework AppKit
-
+vpath %.c $(SRC_DIR)
+vpath %.o $(OBJ_DIR)
+vpath %.h $(INC_DIR)
 
 $(NAME): $(OBJ)
-	@make -C libft/
-	@gcc $(FLAGS) $(SRC) -o $(NAME) -L libft -lft $(GLFW_LINK) $(GLEW_LINK) -framework OpenGL $(MLX_FLAGS)
+	make -C libft/
+	gcc $(FLAGS) ${addprefix $(OBJ_DIR), $(OBJ)} $(LIBFT) $(MLX_FLAGS) $(LINUX_EXTRA_FLAGS) -o $(NAME)
 
-%.o:%.c $(HEADER)
-	@gcc $(FLAGS) -I . -c $< -o $@
+${OBJ}:%.o:%.c $(ALL_HEADERS) | $(OBJ_DIR)
+	gcc -c -I $(INC_DIR) -I $(LIB_DIR) $(FLAGS) $< -o ${addprefix $(OBJ_DIR), $@}
+	#$@
 
 clean:
-	@/bin/rm -f *~
-	@/bin/rm -f $(OBJ)
-	@make -C libft/ clean
+	/bin/rm -f *~
+	/bin/rm -f $(OBJ)
+	make -C libft/ clean
 
 fclean: clean
-	@/bin/rm -f $(NAME)
-	@make -C libft/ fclean
+	/bin/rm -f $(NAME)
+	make -C libft/ fclean
 
 all: $(NAME)
 
 re: fclean all
 
-.PHONY: clean fclean all re
+makecl:
+	make
+	make clean
+
+.PHONY: clean fclean all re makecl
+.SILENT: all $(NAME) $(OBJ) clean fclean re makecl

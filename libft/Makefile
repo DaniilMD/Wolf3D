@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: openelop <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: maximka <maximka@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/09 19:15:37 by openelop          #+#    #+#              #
-#    Updated: 2019/09/09 19:39:10 by openelop         ###   ########.fr        #
+#    Updated: 2020/03/19 12:00:09 by maximka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 
 %.o:%.c $(HEADER)
-	@gcc -Wall -Wextra -Werror -I . -c $< -o $@
+	@gcc -I . -c $< -o $@
 
 clean:
 	@/bin/rm -f *~
