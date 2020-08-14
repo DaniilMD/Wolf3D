@@ -23,7 +23,7 @@ LIBFT = -L ./libft -lft
 
 FLAGS = -Wall -Wextra -Werror
 
-MLX_FLAGS = -L ./minilibx-master -lmlx -lXext -lX11
+MLX_FLAGS = -L ./minilibx -lmlx -lXext -lX11
 
 LINUX_EXTRA_FLAGS = -lm -pthread
 
@@ -37,7 +37,6 @@ $(NAME): $(OBJ)
 
 ${OBJ}:%.o:%.c $(ALL_HEADERS) | $(OBJ_DIR)
 	gcc -c -I $(INC_DIR) -I $(LIB_DIR) $(FLAGS) $< -o ${addprefix $(OBJ_DIR), $@}
-	#$@
 
 clean:
 	/bin/rm -f *~

@@ -1,22 +1,13 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: openelop <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/02 19:19:05 by openelop          #+#    #+#             */
-/*   Updated: 2019/08/02 19:19:06 by openelop         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
+#define MAIN_LONG_MAX ((unsigned long)(~0L))
+#define M_LONG_MAX ((long)(MAIN_LONG_MAX >> 1))
+#define M_LONG_MIN ((long)(~M_LONG_MAX))
 
 static int	maxchecks(long long res, const char *str, int i, int indic)
 {
 	long long	brd;
 
-	brd = ((long)(((unsigned long)(~0L)) >> 1)) / 10;
+	brd = M_LONG_MAX / 10;
 	if ((res > brd || (res == brd && (str[i] - '0') > 7)) && indic == 0)
 		return (-1);
 	if ((res > brd || (res == brd && (str[i] - '0') > 8)) && indic == 1)

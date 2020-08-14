@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   wolf3d.h                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: maximka <maximka@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/11 20:09:27 by maximka           #+#    #+#             */
-/*   Updated: 2020/06/12 16:19:19 by maximka          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef WOLF3D_H
 # define WOLF3D_H
 # include "libft.h"
@@ -22,7 +10,7 @@
 # include <pthread.h>
 # include "keys.h"
 # include "linux_keys.h"
-# include "../minilibx-master/mlx.h"
+# include "../minilibx/mlx.h"
 
 # define WINDOW_WIDTH 800
 # define WINDOW_HEIGHT 800

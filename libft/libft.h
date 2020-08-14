@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: openelop <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/03 16:31:14 by openelop          #+#    #+#             */
-/*   Updated: 2019/09/11 16:29:08 by openelop         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
@@ -18,7 +6,7 @@
 # include <sys/stat.h>
 # include <sys/types.h>
 # include <fcntl.h>
-# define BUFF_SIZE 1
+# define BUFF_SIZE 5
 
 typedef struct		s_list
 {
@@ -93,6 +81,5 @@ t_list				*ft_list_find(t_list *begin_list,
 void				ft_list_merge(t_list **begin_list1, t_list *begin_list2);
 void				ft_list_sort(t_list **begin_list, int (*cmp)());
 int					get_next_line(const int fd, char **line);
-void				free_char_starstar(char **splitted);
 
 #endif

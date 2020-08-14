@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: openelop <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 15:43:14 by openelop          #+#    #+#             */
-/*   Updated: 2019/09/05 15:43:16 by openelop         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)
@@ -20,6 +8,8 @@ void	ft_putstr_fd(char const *s, int fd)
 	if (s == NULL)
 		return ;
 	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
 		i++;
-	write(fd, s, i);
+	}
 }
