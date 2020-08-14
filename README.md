@@ -28,7 +28,7 @@ You can travel through the map using arrow keys to move, QE keys to rotate, F to
   
 Rules of how to create a map are present in the repository under the name of "how_to_create_a_map" file.
 ## How it works
-
+To be added...  
 ## Project evaluation result  
 ### Score 125/100  
 Mandatory part  
