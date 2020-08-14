@@ -40,7 +40,7 @@ Bonus part
 Bonus funtionality:  
 1) Floor and ceiling
   
-![Screenshot from 2020-08-13 18-08-22](https://user-images.githubusercontent.com/48802453/90246506-783f3100-de3d-11ea-97e5-cc45654506c0.png)
+![Screenshot from 2020-08-14 15-50-47](https://user-images.githubusercontent.com/48802453/90251248-1636f980-de46-11ea-9c1d-27514c924b30.png)
   
 2) Fog effect
   
@@ -52,7 +52,7 @@ Barrels and pillars cannot be walked through  (one of the next bonuses)
 ![Screenshot from 2020-08-13 18-05-37](https://user-images.githubusercontent.com/48802453/90246615-acb2ed00-de3d-11ea-98ce-79f61c846ebe.png)
   
 Lamps have no physics and can be walked under    
-![Screenshot from 2020-08-14 14-47-09](https://user-images.githubusercontent.com/48802453/90247035-72961b00-de3e-11ea-88b2-4bcee876f633.png)
+![Screenshot from 2020-08-14 15-49-04](https://user-images.githubusercontent.com/48802453/90251247-1505cc80-de46-11ea-9a71-b80fe319d796.png)
   
 Coins are pickable (one of the next bonuses)  
   
