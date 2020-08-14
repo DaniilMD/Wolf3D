@@ -8,7 +8,7 @@
 •	Rigor  
 •	Graphics  
 •	Getting acquainted with the ray casting rendering technique
-## How to run it? (works on Linux and MacOS)
+## How to run it? (works on Linux)
 •	git clone https://github.com/DaniilMD/Wolf3D.git «Folder name»  
 •	cd «Folder name»  
 •	make  
